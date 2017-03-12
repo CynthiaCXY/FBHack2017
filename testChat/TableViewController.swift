@@ -42,11 +42,14 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TableViewCell
 
         // Configure the cell...
-       cell.textLabel?.text = appList[indexPath.row]
-
+        
+        
+        cell.helloLabel.lineBreakMode = .byWordWrapping
+        cell.helloLabel.numberOfLines = 0
+        cell.helloLabel.text = appList[indexPath.row]
         return cell
     }
 
@@ -56,7 +59,10 @@ class TableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
- 
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 
     
 //     Override to support editing the table view.
@@ -65,16 +71,45 @@ class TableViewController: UITableViewController {
  
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let rateAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Flag") { (action , indexPath ) -> Void in
+        let rateAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Alarm me...") { (action , indexPath ) -> Void in
             self.isEditing = false
-            print("Vote button pressed")
+            let alert = UIAlertController(title: "My Alert", message: "This is an action sheet.", preferredStyle: .actionSheet) // 1
+            let firstAction = UIAlertAction(title: "in 30 mins", style: .default) { (alert: UIAlertAction!) -> Void in
+                print("You pressed button one")
+            } // 2
+            
+            let secondAction = UIAlertAction(title: "in 1 hour", style: .default) { (alert: UIAlertAction!) -> Void in
+                print("You pressed button two")
+            } // 3
+            
+            let thirdAction = UIAlertAction(title: "in 2 hour", style: .default) { (alert: UIAlertAction!) -> Void in
+                print("You pressed button two")
+            } // 4
+            
+            let fourthAction = UIAlertAction(title: "Customise...", style: .default) { (alert: UIAlertAction!) -> Void in
+                print("You pressed button two")
+            } // 5
+            
+            let fifthAction = UIAlertAction(title: "Cancel", style: .cancel) { (alert: UIAlertAction!) -> Void in
+                print("You pressed button two")
+            } // 6
+            
+            
+            
+            alert.addAction(firstAction) // 4
+            alert.addAction(secondAction) // 5
+            alert.addAction(thirdAction)
+            alert.addAction(fourthAction)
+            alert.addAction(fifthAction)
+            self.present(alert, animated: true, completion:nil) // 6
+            
         }
         
-        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share") { (action , indexPath) -> Void in
-            self.isEditing = false
-            print("Share button pressed")
-        }
-        return [rateAction, shareAction]
+//        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share") { (action , indexPath) -> Void in
+//            self.isEditing = false
+//            print("Share button pressed")
+//        }
+        return [rateAction]
     }
     
     
@@ -102,5 +137,4 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

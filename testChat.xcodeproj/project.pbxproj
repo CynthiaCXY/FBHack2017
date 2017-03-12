@@ -14,6 +14,7 @@
 		040AC6CC1E7473DE0007B3F7 /* testChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040AC6CB1E7473DE0007B3F7 /* testChatTests.swift */; };
 		040AC6D71E7473DE0007B3F7 /* testChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040AC6D61E7473DE0007B3F7 /* testChatUITests.swift */; };
 		040AC6E71E7477290007B3F7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040AC6E61E7477290007B3F7 /* TableViewController.swift */; };
+		6A875F4D1E74CB5B00FC49BD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A875F4C1E74CB5B00FC49BD /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		040AC6D61E7473DE0007B3F7 /* testChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testChatUITests.swift; sourceTree = "<group>"; };
 		040AC6D81E7473DE0007B3F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		040AC6E61E7477290007B3F7 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		6A875F4C1E74CB5B00FC49BD /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				040AC6B61E7473DE0007B3F7 /* AppDelegate.swift */,
 				040AC6BA1E7473DE0007B3F7 /* Main.storyboard */,
+				6A875F4C1E74CB5B00FC49BD /* TableViewCell.swift */,
 				040AC6E61E7477290007B3F7 /* TableViewController.swift */,
 				040AC6BD1E7473DE0007B3F7 /* Assets.xcassets */,
 				040AC6BF1E7473DE0007B3F7 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A875F4D1E74CB5B00FC49BD /* TableViewCell.swift in Sources */,
 				040AC6E71E7477290007B3F7 /* TableViewController.swift in Sources */,
 				040AC6B71E7473DE0007B3F7 /* AppDelegate.swift in Sources */,
 			);
@@ -503,6 +507,7 @@
 				040AC6DD1E7473DE0007B3F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		040AC6DE1E7473DE0007B3F7 /* Build configuration list for PBXNativeTarget "testChatTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +516,7 @@
 				040AC6E01E7473DE0007B3F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		040AC6E11E7473DE0007B3F7 /* Build configuration list for PBXNativeTarget "testChatUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +525,7 @@
 				040AC6E31E7473DE0007B3F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

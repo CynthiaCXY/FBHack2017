@@ -18,26 +18,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="36" id="5hq-1V-2iw">
+                            <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="5" shouldIndentWhileEditing="NO" reuseIdentifier="tableCell" id="5hq-1V-2iw" customClass="TableViewCell" customModule="testChat" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="36"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5hq-1V-2iw" id="35f-YZ-Fkm">
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5hq-1V-2iw" id="35f-YZ-Fkm">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGU-Si-89A">
-                                            <rect key="frame" x="43" y="6" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nps-h3-FZM">
+                                            <rect key="frame" x="5" y="3" width="270" height="29.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bum-uK-kj4">
-                                            <rect key="frame" x="127" y="-48" width="240" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="nps-h3-FZM" secondAttribute="bottom" constant="3" id="BSV-9W-sXj"/>
+                                        <constraint firstItem="nps-h3-FZM" firstAttribute="top" secondItem="35f-YZ-Fkm" secondAttribute="top" constant="3" id="Gck-oR-TZ2"/>
+                                        <constraint firstItem="nps-h3-FZM" firstAttribute="leading" secondItem="35f-YZ-Fkm" secondAttribute="leading" constant="5" id="ZqQ-CQ-IAi"/>
+                                        <constraint firstAttribute="trailing" secondItem="nps-h3-FZM" secondAttribute="trailing" constant="100" id="kbV-sQ-9se"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="helloLabel" destination="nps-h3-FZM" id="yQO-ES-pmk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
