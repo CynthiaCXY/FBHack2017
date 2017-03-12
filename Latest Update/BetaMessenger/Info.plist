@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Even more happy</string>
+	<string>Happy</string>
 	<key>NSRemindersUsageDescription</key>
-	<string>Used to help you be happy</string>
+	<string>More happy</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
