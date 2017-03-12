@@ -7,8 +7,15 @@
 //
 
 import UIKit
-
+import EventKit
 class TableViewController: UITableViewController {
+    
+    var reminderText:UITextField!
+    var eventStore = EKEventStore()
+    @IBOutlet weak var myDatePicker: UIDatePicker!
+    let appDelegate = UIApplication.shared.delegate
+        as! AppDelegate
+    
     
     var appList = ["Hello?", "Something important is gonna happen", "Really? I can't make it tomorrow, but I can definitely do it later later .dfsdfsdfjsdfiusdbfiusdhf iushdf shdfishdf sdf ", "alright", "what's up"]
     override func viewDidLoad() {
@@ -71,15 +78,18 @@ class TableViewController: UITableViewController {
  
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
         let rateAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Alarm me...") { (action , indexPath ) -> Void in
             self.isEditing = false
             let alert = UIAlertController(title: "My Alert", message: "This is an action sheet.", preferredStyle: .actionSheet) // 1
-            let firstAction = UIAlertAction(title: "in 30 mins", style: .default) { (alert: UIAlertAction!) -> Void in
-                print("You pressed button one")
+            let firstAction = UIAlertAction(title: "Save in Reminder for later", style: .default) { (alert: UIAlertAction!) -> Void in
+                
+                self.setReminder(row: indexPath.row)
             } // 2
             
             let secondAction = UIAlertAction(title: "in 1 hour", style: .default) { (alert: UIAlertAction!) -> Void in
                 print("You pressed button two")
+                self.setReminder(row: indexPath.row)
             } // 3
             
             let thirdAction = UIAlertAction(title: "in 2 hour", style: .default) { (alert: UIAlertAction!) -> Void in
@@ -87,7 +97,7 @@ class TableViewController: UITableViewController {
             } // 4
             
             let fourthAction = UIAlertAction(title: "Customise...", style: .default) { (alert: UIAlertAction!) -> Void in
-                print("You pressed button two")
+                self.myDatePicker.isHidden = false
             } // 5
             
             let fifthAction = UIAlertAction(title: "Cancel", style: .cancel) { (alert: UIAlertAction!) -> Void in
@@ -110,6 +120,45 @@ class TableViewController: UITableViewController {
 //            print("Share button pressed")
 //        }
         return [rateAction]
+    }
+    
+    func setReminder(row:Int){
+        if self.appDelegate.eventStore == nil {
+            self.appDelegate.eventStore = EKEventStore()
+            
+            self.appDelegate.eventStore?.requestAccess(
+                to: EKEntityType.reminder, completion:
+                {(granted, error) in
+                    if !granted {
+                        print("Access to store not granted")
+                    } else {
+                        print("Access granted")
+                    }
+            })
+        }
+        
+        if (self.appDelegate.eventStore != nil) {
+            self.createReminder(lab: self.appList[row])
+        }
+    }
+    
+    func createReminder(lab:String) {
+        
+        let reminder = EKReminder(eventStore: appDelegate.eventStore!)
+        
+        reminder.title = lab
+        reminder.calendar =
+            appDelegate.eventStore!.defaultCalendarForNewReminders()
+        let alarm = EKAlarm(relativeOffset: 10)
+        
+        reminder.addAlarm(alarm)
+        
+        do {
+            try appDelegate.eventStore?.save(reminder,
+                                             commit: true)
+        } catch let error {
+            print("Reminder failed with error \(error.localizedDescription)")
+        }
     }
     
     
