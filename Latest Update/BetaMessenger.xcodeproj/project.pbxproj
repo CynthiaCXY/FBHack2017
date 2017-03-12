@@ -13,6 +13,7 @@
 		6A8FA5191E751F0200C30042 /* BetaMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A8FA5171E751F0200C30042 /* BetaMessenger.xcdatamodeld */; };
 		6A8FA51B1E751F0200C30042 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A8FA51A1E751F0200C30042 /* Assets.xcassets */; };
 		6A8FA51E1E751F0200C30042 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8FA51C1E751F0200C30042 /* LaunchScreen.storyboard */; };
+		6A8FA5261E753AF100C30042 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8FA5251E753AF100C30042 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6A8FA51A1E751F0200C30042 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A8FA51D1E751F0200C30042 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A8FA51F1E751F0200C30042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A8FA5251E753AF100C30042 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				6A8FA5101E751F0200C30042 /* AppDelegate.swift */,
 				6A8FA5121E751F0200C30042 /* ViewController.swift */,
 				6A8FA5141E751F0200C30042 /* Main.storyboard */,
+				6A8FA5251E753AF100C30042 /* TableViewCell.swift */,
 				6A8FA51A1E751F0200C30042 /* Assets.xcassets */,
 				6A8FA51C1E751F0200C30042 /* LaunchScreen.storyboard */,
 				6A8FA51F1E751F0200C30042 /* Info.plist */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A8FA5191E751F0200C30042 /* BetaMessenger.xcdatamodeld in Sources */,
+				6A8FA5261E753AF100C30042 /* TableViewCell.swift in Sources */,
 				6A8FA5131E751F0200C30042 /* ViewController.swift in Sources */,
 				6A8FA5111E751F0200C30042 /* AppDelegate.swift in Sources */,
 			);
